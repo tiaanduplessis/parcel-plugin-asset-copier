@@ -16,7 +16,7 @@
   "devDependencies": {
     "jest": "23.4.2",
     "parcel-bundler": "1.9.7",
-    "standard": "11.0.1"
+    "standard": "13.1.0"
   },
   "keywords": [
     "parcel",
