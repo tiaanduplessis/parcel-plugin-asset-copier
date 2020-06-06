@@ -6,7 +6,7 @@ const Bundler = require('parcel-bundler')
 const assetCopier = require('./index')
 
 test('should copy assets', async () => {
-  let bundler = new Bundler('./test-files/index.html', {
+  const bundler = new Bundler('./test-files/index.html', {
     outDir: path.join(__dirname, 'dist'),
     watch: false,
     cache: false,

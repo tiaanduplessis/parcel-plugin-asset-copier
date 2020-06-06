@@ -11,12 +11,12 @@
     "test": "rm -rf .cache dist && jest"
   },
   "dependencies": {
-    "recursive-copy": "^2.0.9"
+    "recursive-copy": "2.0.10"
   },
   "devDependencies": {
-    "jest": "23.6.0",
-    "parcel-bundler": "1.9.7",
-    "standard": "14.3.1"
+    "jest": "26.0.1",
+    "parcel-bundler": "1.12.4",
+    "standard": "14.3.4"
   },
   "keywords": [
     "parcel",

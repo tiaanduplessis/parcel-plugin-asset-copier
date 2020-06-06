@@ -26,17 +26,17 @@ function assetCopier (bundler) {
     }
 
     if (!pkg) {
-      console.error(`No package.json file found.`)
+      console.error('No package.json file found.')
       return
     }
 
-    const assetDir = pkg['assetsPath'] || 'assets'
+    const assetDir = pkg.assetsPath || 'assets'
 
     if (fs.existsSync(assetDir)) {
       const bundleDir = path.dirname(bundle.name)
 
       try {
-        await copy(assetDir, bundleDir, {overwrite: true})
+        await copy(assetDir, bundleDir, { overwrite: true })
       } catch (error) {
         console.error(error)
       }
