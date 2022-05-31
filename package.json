@@ -11,12 +11,12 @@
     "test": "rm -rf .cache dist && jest"
   },
   "dependencies": {
-    "recursive-copy": "2.0.10"
+    "recursive-copy": "2.0.14"
   },
   "devDependencies": {
-    "jest": "26.0.1",
+    "jest": "28.1.0",
     "parcel-bundler": "1.12.4",
-    "standard": "14.3.4"
+    "standard": "17.0.0"
   },
   "keywords": [
     "parcel",
@@ -26,14 +26,12 @@
     "static",
     "copy"
   ],
-  "standard": {
-    "env": {
-      "jest": true
-    }
-  },
   "jest": {
     "verbose": true,
     "testURL": "http://localhost/"
+  },
+  "engines": {
+    "parcel": "1.x"
   },
   "assetsPath": "test-files/assets"
 }

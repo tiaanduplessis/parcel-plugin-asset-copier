@@ -1,3 +1,4 @@
+/* eslint-env jest */
 const fs = require('fs')
 const path = require('path')
 
@@ -19,7 +20,6 @@ test('should copy assets', async () => {
   // HACK: - No clue what async op is causing me to do this
   setTimeout(() => {
     const files = fs.readdirSync('dist')
-    console.log(files)
     expect(files.includes('test.jpg')).toBeTruthy()
     expect(files.includes('test.txt')).toBeTruthy()
   }, 0)

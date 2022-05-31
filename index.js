@@ -1,6 +1,6 @@
 const fs = require('fs')
 const path = require('path')
-var copy = require('recursive-copy')
+const copy = require('recursive-copy')
 
 const hasPkgFile = bundler => bundler.mainAsset && bundler.mainAsset.package && bundler.mainAsset.package.pkgfile
 
