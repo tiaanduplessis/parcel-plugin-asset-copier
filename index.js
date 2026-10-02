@@ -14,9 +14,10 @@ function assetCopier (bundler) {
       pkg = require(bundler.mainAsset.package.pkgfile)
     } else {
       try {
-        if (bundler.mainBundle.childBundles.values().next().value) {
-          bundle = bundler.mainBundle.childBundles.values().next().value
-          pkg = await bundler.mainBundle.childBundles.values().next().value.entryAsset.getPackage()
+        const childBundle = bundler.mainBundle.childBundles.values().next().value
+        if (childBundle && childBundle.entryAsset) {
+          bundle = childBundle
+          pkg = await childBundle.entryAsset.getPackage()
         } else {
           pkg = await bundler.mainBundle.entryAsset.getPackage()
         }
