@@ -152,10 +152,16 @@ test('reports a copy failure', async () => {
 test('waits for asset copying to finish', async () => {
   const main = createBundle(path.join('dist', 'main.js'), {})
   let finishCopy
-  copy.mockImplementation(() => new Promise(resolve => { finishCopy = resolve }))
+  let startCopy
+  const started = new Promise(resolve => { startCopy = resolve })
+  copy.mockImplementation(() => {
+    startCopy()
+    return new Promise(resolve => { finishCopy = resolve })
+  })
   let finished = false
   const copying = runBundled(main).then(() => { finished = true })
-  await Promise.resolve()
+  await started
+  await new Promise(resolve => setImmediate(resolve))
 
   expect(copy).toHaveBeenCalledTimes(1)
   expect(finished).toBe(false)
